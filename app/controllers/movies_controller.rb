@@ -1,6 +1,9 @@
 # This file is app/controllers/movies_controller.rb
 class MoviesController < ApplicationController
   def index
+    
+    @hlite ||= params[:id]
+    
     if params[:sort_by]
       @movies = Movie.order("#{params[:sort_by]} ASC").all
     else
